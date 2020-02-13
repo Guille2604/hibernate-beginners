@@ -2,6 +2,8 @@
 package com.research24x7.hibernate.beginners.entity;
 
 
+import lombok.*;
+
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -12,6 +14,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity (name =  "Employee")
 @Table (name = "employee")
 public class Employee {
@@ -25,65 +32,15 @@ public class Employee {
 	@Column(name="emp_name", length=28, nullable=false)
 	private String name;
 	
-	@Column(name="emp_role", length=28, nullable=false)
-	private String role;
-	
-	@Column(name="sys_creation", nullable=false)
-	private Date insertTime;
+	@Column(name="emp_last_name", length=28, nullable=false)
+	private String lastName;
 
+	@Column(name="emp_dni",nullable=false)
+	private Long dni;
 
-    public Employee() {
+	@Column(name="emp_email", nullable=false)
+	private String email;
 
-        super ();
-    }
-
-    public Employee(String name, String role, Date insertTime) {
-
-        super ();
-
-        this.name = name;
-        this.role = role;
-        this.insertTime = insertTime;
-    }
-
-
-	public int getId () {
-
-		return this.id;
-	}
-
-	public void setId (int id) {
-
-		this.id = id;
-	}
-
-	public String getName () {
-
-		return this.name;
-	}
-
-	public void setName (String name) {
-
-	    this.name = name;
-	}
-
-	public String getRole () {
-
-		return this.role;
-	}
-
-	public void setRole (String role) {
-
-	    this.role = role;
-	}
-
-	public Date getInsertTime () {
-
-		return this.insertTime;
-	}
-
-	public void setInsertTime (Date insertTime) {
-
-		this.insertTime = insertTime;
-	}
+	@Column(name="emp_mobile", nullable=false)
+	private String mobile;
 }
