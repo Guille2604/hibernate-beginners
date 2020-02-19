@@ -1,31 +1,33 @@
 -- Postgresql 9.6
 
-CREATE SEQUENCE public.employee_seq
+CREATE SEQUENCE public.persona_seq
 INCREMENT 1
 START 1
 MINVALUE 1
 MAXVALUE 9223372036854775807
 CACHE 1;
 
-ALTER SEQUENCE public.employee_seq
+ALTER SEQUENCE public.persona_seq
 OWNER TO postgres;
 
 -- Table: public.employee
 
 -- DROP TABLE public.employee;
 
-CREATE TABLE public.employee
+CREATE TABLE public.persona
 (
-  emp_id integer NOT NULL DEFAULT nextval('employee_seq'::regclass),
-  emp_name character varying(28) COLLATE pg_catalog."default" NOT NULL,
-  emp_role character varying(28) COLLATE pg_catalog."default" NOT NULL,
-  sys_creation timestamp with time zone NOT NULL,
-  CONSTRAINT employee_pkey PRIMARY KEY (emp_id)
+  persona_id integer NOT NULL DEFAULT nextval('persona_seq'::regclass),
+  nombre character varying(28) COLLATE pg_catalog."default" NOT NULL,
+  apellido character varying(28) COLLATE pg_catalog."default" NOT NULL,
+  dni character varying(28) COLLATE pg_catalog."default" NOT NULL,
+  email character varying(28) COLLATE pg_catalog."default" NOT NULL,
+  telefono character varying(28) COLLATE pg_catalog."default" NOT NULL,
+  CONSTRAINT persona_pkey PRIMARY KEY (persona_id)
 )
 WITH (
 OIDS = FALSE
 )
 TABLESPACE pg_default;
 
-ALTER TABLE public.employee
+ALTER TABLE public.persona
   OWNER to postgres;

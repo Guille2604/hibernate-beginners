@@ -15,7 +15,7 @@
         <property name="format_sql">true</property>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL82Dialect</property>
 
-        <mapping class="com.research24x7.hibernate.beginners.entity.Employee" />
+        <mapping class="com.research24x7.hibernate.beginners.entity.Persona" />
 
 	</session-factory>
 
