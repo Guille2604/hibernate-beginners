@@ -23,7 +23,7 @@ public class CSVReader {
         try {
 
             br = new BufferedReader(new FileReader(csvFile));
-            while ((line = br.readLine()) != null) {
+            while ((line = br.readLine()) !=  null) {
 
                 String[] param = line.split(cvsSplitBy);
 
