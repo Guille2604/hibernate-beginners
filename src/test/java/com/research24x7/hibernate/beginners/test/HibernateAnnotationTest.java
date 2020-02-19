@@ -61,11 +61,13 @@ public class HibernateAnnotationTest {
             logger.info("Creating values to insert...");
             Persona[] values = new Persona[]{
 
-                    new Persona("Homer Simpson", "Test", new Date()),
-                    new Persona("Marge Simpson", "Test", new Date()),
-                    new Persona("Bart Simpson", "Test", new Date()),
-                    new Persona("Lisa Simpson", "Test", new Date()),
-                    new Persona("Maggie Simpson", "Test", new Date())
+
+
+                    new Persona("Jose","Pepe","22121","toto","55555"),
+
+                    new Persona("Jose","Pepe","22121","toto","55555"),
+                    new Persona("Jose","Pepe","22121","toto","55555"),
+                    new Persona("Jose","Pepe","22121","toto","55555")
             };
 
             // Save the data.

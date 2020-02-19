@@ -3,7 +3,9 @@ package com.research24x7.hibernate.beginners.util;
 import com.research24x7.hibernate.beginners.entity.Persona;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class CSVReader {
@@ -15,9 +17,9 @@ public class CSVReader {
         String line = "";
         String cvsSplitBy = ",";
 
-        ArrayList<Persona> personas = new Persona();
+        ArrayList<Persona> personas = new ArrayList<>();
 
-        Persona p;
+        Persona p = new Persona();
 
 
         try {
@@ -31,9 +33,8 @@ public class CSVReader {
                 p.setApellido(param[1]);
                 p.setDni(param[2]);
                 p.setEmail(param[3]);
-                p.setTelefono(p.setEmail(param[4]);
+                p.setTelefono(param[4]);
                 personas.add(p);
-                );
             }
 
         } catch (FileNotFoundException e) {
@@ -50,6 +51,6 @@ public class CSVReader {
             }
         }
 
-
+        return personas;
     }
 }
